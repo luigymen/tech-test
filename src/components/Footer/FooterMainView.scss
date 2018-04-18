@@ -1,0 +1,88 @@
+.dib {
+    display: inline-block;
+}
+
+.link {
+    text-decoration: none;
+    transition: color .15s ease-in;
+}
+
+.link:link, .link:visited {
+    transition: color .15s ease-in;
+}
+
+.link:hover {
+    transition: color .15s ease-in;
+}
+
+.link:active {
+    transition: color .15s ease-in;
+}
+
+.link:focus {
+    transition: color .15s ease-in;
+    outline: 1px dotted currentColor;
+}
+
+.white-80 {
+    color: rgba(255, 255, 255, .8);
+}
+
+.bg-near-black {
+    background-color: #111;
+}
+
+.hover-gold:hover {
+    color: #faad3f;
+}
+
+.hover-gold:focus {
+    color: #faad3f;
+}
+
+.hover-light-purple:hover {
+    color: #a463f2;
+}
+
+.hover-light-purple:focus {
+    color: #a463f2;
+}
+
+.hover-green:hover {
+    color: #19a974;
+}
+
+.hover-green:focus {
+    color: #19a974;
+}
+
+.pv5 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.ph4 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.mr4 {
+    margin-right: 2rem;
+}
+
+.f6 {
+    font-size: .875rem;
+}
+
+@media screen and (min-width: 30em) {
+    .mr5-ns {
+        margin-right: 4rem;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .pv6-l {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
