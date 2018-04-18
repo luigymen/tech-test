@@ -1,9 +1,9 @@
-const CONVERT = 'CONVERT';
+const GET_EXCHANGE = 'GET_EXCHANGE';
 const SET_EUR_VALUE = 'SET_EUR_VALUE';
-const SET_LOADING = 'SET_LOADING';
+const SET_EX_VALUE = 'SET_EX_VALUE';
 
 export default {
-    CONVERT,
+    GET_EXCHANGE,
     SET_EUR_VALUE,
-    SET_LOADING
+    SET_EX_VALUE
 }

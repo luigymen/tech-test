@@ -12,7 +12,7 @@ export default class Header extends Component {
                 <nav class="bt bb tc center mt4">
                     <Link className="f6 f4-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" to="/">Convert</Link>
                     <Link className="f6 f4-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" to="/about">About</Link>
-                    <Link class="f6 f4-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" to="/contact">Contact</Link>
+                    <Link className="f6 f4-l link bg-animate black-80 hover-bg-light-gray dib pa3 ph4-l" to="/contact">Contact</Link>
                 </nav>
             </header>
         )

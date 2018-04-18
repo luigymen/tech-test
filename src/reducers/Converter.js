@@ -1,13 +1,18 @@
 import Types from '../actions/constants';
 import { createReducer } from '../helpers/stateHelper';
+import currency from "../helpers/currency";
 
 export const set = function (initialState) {
     return createReducer(initialState, {
         [Types.SET_EUR_VALUE](state, action) {
-            return Object.assign({}, state, { eurValue: action.eurValue });
+            let eurValue = '';
+            if(action.exValue){
+                eurValue = currency.formatToEuro(currency.usdToEuro(action.exValue, action.usdValue));
+            }
+            return Object.assign({}, state, { eurValue: eurValue });
         },
-        [Types.SET_LOADING](state, action) {
-            return Object.assign({}, state, { loading: action.loading });
+        [Types.SET_EX_VALUE](state, action) {
+            return Object.assign({}, state, { exValue: action.exValue });
         }
     });
 }

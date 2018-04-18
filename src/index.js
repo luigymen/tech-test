@@ -12,7 +12,7 @@ import history from './history';
 import epics from './epics';
 
 const rootEpic = combineEpics(
-  epics.convert
+  epics.getExchange
 );
 
 const epicMiddleware = createEpicMiddleware(rootEpic);

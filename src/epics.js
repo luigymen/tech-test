@@ -2,29 +2,25 @@ import 'rxjs';
 import API from './helpers/api';
 import Types from './actions/constants';
 import * as ConverterActions from './actions/Converter';
-import currency from "./helpers/currency";
 
-const convert = action$ =>
-    action$.ofType(Types.CONVERT)
+const getExchange = action$ =>
+    action$.ofType(Types.GET_EXCHANGE)
         .mergeMap((action) => {
+            console.log("API CALL"); // 10 minutes notitication
             return API.get(`latest?base=USD&symbols=EUR`, { json: true })
                 .flatMap((result) => {
-                    const exValue = result.data.rates.EUR;
-                    const eurValue = currency.formatToEuro(currency.usdToEuro(exValue, action.usdValue));
                     return [
-                        ConverterActions.setEurValue(eurValue),
-                        ConverterActions.setLoading(false)
+                        ConverterActions.setExValue(result.data.rates.EUR),
                     ];
                 })
                 .catch(error => {
                     alert("Error!")
                     return [
-                        ConverterActions.setEurValue(''),
-                        ConverterActions.setLoading(false)
+                        ConverterActions.setExValue(null),
                     ];
                 });
         });
 
 export default {
-    convert
+    getExchange
 }

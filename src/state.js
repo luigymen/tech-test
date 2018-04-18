@@ -1,4 +1,4 @@
 export default {
     eurValue: '',
-    loading: false
+    exValue: null
 }

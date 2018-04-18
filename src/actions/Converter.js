@@ -1,22 +1,22 @@
 import Types from './constants';
 
-export function convert(usdValue){
+export function getExchange(){
     return {
-        type: Types.CONVERT,
-        usdValue
+        type: Types.GET_EXCHANGE
     }
 } 
 
-export function setEurValue(eurValue){
+export function setEurValue(usdValue, exValue){
     return {
         type: Types.SET_EUR_VALUE,
-        eurValue
+        usdValue,
+        exValue
     }
 }
 
-export function setLoading(loading){
+export function setExValue(exValue){
     return {
-        type: Types.SET_LOADING,
-        loading
+        type: Types.SET_EX_VALUE,
+        exValue
     }
 }

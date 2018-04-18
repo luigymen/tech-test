@@ -12,6 +12,11 @@ export default class ConverterMainView extends Component {
         }
     }
 
+    componentDidMount(){
+        this.props.getExchange()
+        setInterval(() => this.props.getExchange(), 600000) // 10 minutes call to the API
+    }
+
     onChangeUSD(e) {
         this.setState({
             usdValue: e.target.value,
@@ -21,7 +26,7 @@ export default class ConverterMainView extends Component {
 
     submitUSD(e) {
         e.preventDefault();
-        this.props.convert(this.state.usdValue);
+        this.props.setEurValue(this.state.usdValue, this.props.exValue);
     }
 
     render() {
@@ -44,8 +49,14 @@ export default class ConverterMainView extends Component {
                         </div>
                     </fieldset>
                     <div className="">
+                        { this.props.exValue == null &&
+                        <input onClick={this.submitUSD} disabled
+                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Convert" />
+                        }
+                        { this.props.exValue != null &&
                         <input onClick={this.submitUSD}
                             className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Convert" />
+                        }
                     </div>
                 </form>
             </main>

@@ -7,7 +7,7 @@ import Converter from '../../components/Converter';
 const mapStateToProps = (state) => {
     return {
         eurValue: state.converter.eurValue,
-        loading: state.converter.loading
+        exValue: state.converter.exValue
     };
 };
 
